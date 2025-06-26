@@ -26,4 +26,4 @@ To install the required Python packages using Conda:
 
 ```bash
 conda env create -f environment.yml
-conda activate feasible-dynamics
+conda activate id
