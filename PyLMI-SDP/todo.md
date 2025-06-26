@@ -1,0 +1,4 @@
+TODO
+====
+
+- use sparse matrices
