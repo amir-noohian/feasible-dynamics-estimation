@@ -1,0 +1,29 @@
+# Feasible Dynamics Estimation
+
+This repository contains code and resources for dynamics estimation using symbolic modeling and convex optimization. The project is structured into the following folders:
+
+## 📁 Repository Structure
+
+- `Feas-Ident-WAM4/`  
+  Implementation for 4-DOF WAM robot dynamics estimation.
+
+- `IROS2013-Feas-Ident-WAM7/`  
+  Original code and data related to the 7-DOF WAM robot dynamics estimation, based on the IROS 2013 paper.
+
+- `PyLMI-SDP/`  
+  Python library for solving Linear Matrix Inequalities using Semidefinite Programming.  
+  ⚠️ This folder has its own installation instructions.
+
+- `SymPyBotics/`  
+  Symbolic modeling library for robotic manipulators.  
+  ⚠️ This folder also includes its own installation guide.
+
+---
+
+## 📦 Environment Setup
+
+To install the required Python packages using Conda:
+
+```bash
+conda env create -f environment.yml
+conda activate feasible-dynamics
