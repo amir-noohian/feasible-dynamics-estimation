@@ -1,22 +1,30 @@
 import numpy as np
 
 # File paths
-input_file = "data/recdata/rbtlog_4.dat"
-output_file = "data/recdata/rbtlog_4_dof.dat"
+names = ['slax/rbtlog_2',
+    'slax/rbtlog_3',
+    'slax/rbtlog_9',
+    'slax/rbtlog_10',
+    'slax/rbtlog_11',]
 
-# Load full data: shape (N, 15)
-# [time, q1...q7, tau1...tau7]
-data = np.loadtxt(input_file)
+for name in names:
+                    
+    input_file = f"data/recdata/{name}.dat"
+    output_file = f"data/recdata/{name}_4_dof.dat"
 
-# Extract columns
-time = data[:, [0]]            # shape (N, 1)
-positions = data[:, 1:5]       # q1 to q4
-torques = data[:, 8:12]        # tau1 to tau4
+    # Load full data: shape (N, 15)
+    # [time, q1...q7, tau1...tau7]
+    data = np.loadtxt(input_file)
 
-# Concatenate: [time | q1-q4 | tau1-tau4]
-output_data = np.hstack((time, positions, torques))
+    # Extract columns
+    time = data[:, [0]]            # shape (N, 1)
+    positions = data[:, 1:5]       # q1 to q4
+    torques = data[:, 8:12]        # tau1 to tau4
 
-# Save
-np.savetxt(output_file, output_data, fmt="%.10f")
+    # Concatenate: [time | q1-q4 | tau1-tau4]
+    output_data = np.hstack((time, positions, torques))
 
-print(f"Saved 4-DoF data to '{output_file}' with shape {output_data.shape}")
+    # Save
+    np.savetxt(output_file, output_data, fmt="%.10f")
+
+    print(f"Saved 4-DoF data to '{output_file}' with shape {output_data.shape}")
