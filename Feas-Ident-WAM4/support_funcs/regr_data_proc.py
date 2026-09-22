@@ -153,6 +153,10 @@ def diff_and_filt_data( dof, h, q_raw, tau_raw, fc_q, fc_dq, fc_ddq, fc_tau):
     wc_dq = fc_dq * 2 * math.pi * h
     wc_ddq = fc_ddq * 2 * math.pi * h
     wc_tau = fc_tau * 2 * math.pi * h
+    # wc_q = fc_q * 2 * h
+    # wc_dq = fc_dq * 2 * h
+    # wc_ddq = fc_ddq * 2 * h
+    # wc_tau = fc_tau * 2 * h
 
     for i in range(dof):
         q[:,i] = butter_filtfilt( 3, wc_q, q_raw[:,i] )

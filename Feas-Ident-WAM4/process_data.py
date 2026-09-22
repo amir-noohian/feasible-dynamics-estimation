@@ -1,8 +1,8 @@
 import numpy as np
 
 # File paths
-input_file = "data/recdata/rbtlog_4.dat"
-output_file = "data/recdata/rbtlog_4_dof.dat"
+input_file = "data/recdata/zeus_rbtlog_cpp.dat"
+output_file = "data/recdata/zeus_rbtlog_cpp_4dof.dat"
 
 # Load full data: shape (N, 15)
 # [time, q1...q7, tau1...tau7]
